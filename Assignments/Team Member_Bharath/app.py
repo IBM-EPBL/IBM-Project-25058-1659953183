@@ -1,19 +1,19 @@
 # Program 1:
 # Given number prime or not
 
-num = int(input("Enter a number: "))
+num1 = int(input("Enter a number: "))
 flag = False
 
-if num > 1:
-    for i in range(2, num):
-        if (num % i) == 0:
+if num1 > 1:
+    for i in range(2, num1):
+        if (num1 % i) == 0:
             flag = True
             break
 
 if flag:
-    print(num, "is not a prime number")
+    print(num1, "is not a prime number")
 else:
-    print(num, "is a prime number")
+    print(num1, "is a prime number")
 
 # Program 2:
 # Generate odd numbers from range given using while loop
@@ -48,7 +48,7 @@ print(primeNum)
 # Program 4
 # Fibonacci series
 
-num = int(input("Enter a range: "))
+n = int(input("Enter a range: "))
 
 
 def fibonacci(n):
@@ -58,8 +58,8 @@ def fibonacci(n):
         return (fibonacci(n-1) + fibonacci(n-2))
 
 
-if num <= 0:
+if n <= 0:
     print("Enter positive integer")
 else:
-    for i in range(num):
+    for i in range(n):
         print(fibonacci(i))
