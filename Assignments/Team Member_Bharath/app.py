@@ -48,7 +48,7 @@ print(primeNum)
 # Program 4
 # Fibonacci series
 
-n = int(input("Enter a range: "))
+num = int(input("Enter a range: "))
 
 
 def fibonacci(n):
@@ -58,8 +58,8 @@ def fibonacci(n):
         return (fibonacci(n-1) + fibonacci(n-2))
 
 
-if n <= 0:
+if num <= 0:
     print("Enter positive integer")
 else:
-    for i in range(n):
+    for i in range(num):
         print(fibonacci(i))
