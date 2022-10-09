@@ -1,13 +1,21 @@
-from flask import render_template, Flask
+from flask import Flask,render_template,request,url_for,redirect
 app = Flask(__name__)
 
+@app.route('/success/<un>/<mail>')
+def success(un,mail):
+    return (render_template('Welcome.html', name = un, email = mail))
 
-@app.route('/')
-@app.route('/register')
-def register():
-    return render_template('index.html')
-
-
-@app.route('/login')
+@app.route('/login', methods = ['POST', 'GET'])
 def login():
-    return render_template('login.html')
+    if request.method == "POST":
+        user = request.form['username']
+        mail = request.form['email']
+        return (redirect(url_for('success', un = user,mail = mail)))
+    else:
+        user = request.args.get('username')
+        mail = request.args.get('email')
+        return (redirect(url_for('success', un = user,mail = mail)))
+
+
+if __name__ == '__main__':
+    app.run(debug = True)

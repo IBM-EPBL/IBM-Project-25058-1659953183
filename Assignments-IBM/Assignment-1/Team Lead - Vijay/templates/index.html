@@ -22,12 +22,13 @@
       class="d-flex flex-column justify-content-center align-items-center min-vh-100"
     >
       <div class="border border-2 rounded-lg mb-4">
-        <form class="m-4" method="post">
+        <form action="http://localhost:5000/login" class="m-4" method="post">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
               >Email address</label
             >
             <input
+              name="email"
               type="email"
               class="form-control"
               id="exampleInputEmail1"
@@ -41,7 +42,12 @@
             <label for="exampleInputUsername" class="form-label"
               >Username</label
             >
-            <input type="text" class="form-control" id="exampleInputUsername" />
+            <input
+              name="username"
+              type="text"
+              class="form-control"
+              id="exampleInputUsername"
+            />
           </div>
           <div class="mb-3">
             <label for="exampleInputMobile" class="form-label"
