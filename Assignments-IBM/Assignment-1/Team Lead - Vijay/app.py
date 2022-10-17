@@ -1,21 +1,29 @@
-from flask import Flask,render_template,request,url_for,redirect
+import numbers
+from flask import Flask, render_template, request, url_for, redirect
 app = Flask(__name__)
 
-@app.route('/success/<un>/<mail>')
-def success(un,mail):
-    return (render_template('Welcome.html', name = un, email = mail))
 
-@app.route('/login', methods = ['POST', 'GET'])
+@app.route('/')
+def home():
+    return (render_template('index.html'))
+
+@app.route('/success/<name>/<email>/<number>')
+def success(name, email, number):
+    return (render_template('Welcome.html', name=name, email=email, number=number))
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == "POST":
         user = request.form['username']
         mail = request.form['email']
-        return (redirect(url_for('success', un = user,mail = mail)))
+        number = request.form['mobile']
+        return (redirect(url_for('success', name=user, email=mail, number=number)))
     else:
         user = request.args.get('username')
         mail = request.args.get('email')
-        return (redirect(url_for('success', un = user,mail = mail)))
+        number = request.args.get('mobile')
+        return (redirect(url_for('success', name=user, email=mail, number=number)))
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)

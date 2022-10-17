@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Welcome Page</title>
+    <title>Formy | Welcome</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -9,42 +9,49 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS v5.2.1 -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
   </head>
-  <body class="h-100">
-    <div
-      class="d-flex align-items-center justify-content-center"
-      style="height: 500px"
-    >
-      <div
-        class="border border-2 border-secondary d-flex flex-column align-items-center p-5"
-      >
-        <h1 class="pb-2">Welcome {{name}} !</h1>
-        <p>Your email: {{email}}</p>
-      </div>
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <body>
+    <header>
+      <!-- place navbar here -->
+    </header>
+    <main class="d-flex align-items-center justify-content-center min-vh-100">
+      <div class="border rounded-2 d-flex flex-column align-items-center p-5">
+        <h1 class="pb-2">Welcome {{name}} !</h1>
+        <span>
+          <p>
+            Your email: <span><a href="mailto:{{email}}">{{email}}</a></span>
+          </p>
+          <p>
+            Your Num: <span><a href="tel:+91{{number}}">{{number}}</a></span>
+          </p>
+        </span>
+
+        <form action="/">
+          <button class="btn btn-secondary" type="submit">Log out</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
       crossorigin="anonymous"
     ></script>
+
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
   </body>
